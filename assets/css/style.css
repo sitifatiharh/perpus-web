@@ -1,0 +1,1018 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+/* --- REGIST LOGIN VERIFY --- */
+.auth-container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #e6e9f5;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.profile-icon img {
+    width: 35px;
+    height: auto;
+}
+
+h2 {
+    font-weight: 400;
+    color: #a0a0a0;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f2f3f7;
+    font-size: 15px;
+    outline: none;
+    color: #333;
+}
+
+.input-group input:placeholder {
+    color: #9a9a9a;
+}
+
+.btn-primary {
+    padding: 12px 45px;
+    background-color: #0f2c59;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0a1f40;
+}
+
+.error-msg {
+    color: #d9534f;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.success-msg {
+    color: #5cb85c;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.auth-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-link a {
+    color: #0f2c59;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* --- TATA LETAK NAVBAR --- */
+/* Menetralkan efek tengah dari halaman login khusus untuk dasbor */
+body.bg-light {
+    display: block; /* Mengembalikan susunan elemen dari atas ke bawah */
+    min-height: auto;
+}
+
+.bg-light { 
+    background-color: #f9f9fb; 
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.nav-brand { 
+    font-weight: bold; 
+    font-size: 20px; 
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+    font-weight: 500;
+}
+
+.nav-menu a.active, .nav-menu a:hover {
+    color: #0f2c59;
+    border-bottom: 2px solid #0f2c59;
+    padding-bottom: 5px;
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+.profile-nav-icon { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+.logout-link {
+    color: #d9534f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-content { 
+    padding: 0 40px 40px 40px; 
+}
+
+
+/* --- KARTU DASHBOARD --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+}
+.stat-card {
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.stat-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+.stat-icon img { width: 70px; opacity: 0.9; }
+.stat-info { text-align: right; }
+.stat-info h3 { font-size: 40px; margin: 0; font-weight: 600; }
+.stat-info p { margin: 5px 0 0 0; font-size: 16px; opacity: 0.9; }
+.stat-footer {
+    display: block;
+    padding: 12px 25px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.stat-footer:hover { background-color: rgba(255, 255, 255, 0.4); }
+
+/* Varian Warna Kartu */
+.bg-blue { background-color: #4a69bd; }
+.bg-green { background-color: #38ada9; }
+.bg-yellow { background-color: #e58e26; }
+.bg-red { background-color: #e55039; }
+.bg-purple { background-color: #6a89cc; }
+.bg-dark { background-color: #2c3e50; }
+
+
+/* --- SIDEBAR MOBILE --- */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: -250px; /* Sembunyikan di luar layar kiri */
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease-in-out;
+    overflow-x: hidden;
+}
+
+.sidebar.open {
+    left: 0; /* Munculkan sidebar */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.sidebar-header h2 { 
+    margin: 0; 
+    font-size: 22px; 
+    font-weight: bold; 
+}
+
+.close-btn { 
+    font-size: 28px; 
+    cursor: pointer; 
+    color: #333; 
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+
+/* --- HALAMAN BUKU --- */
+/* --- PAGE HEADER --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    color: #0f2c59;
+}
+
+.page-header .btn-primary {
+    text-decoration: none;
+}
+
+/* --- TABEL --- */
+.table-responsif {
+    width: 100%;
+    overflow-x: auto; /* Biar tabel bisa geser samping kalau kegedean */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+#tabelBuku {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabelBuku thead th {
+    background-color: #f2f3f7;
+    color: #0f2c59;
+    border-bottom: 2px solid #ddd !important;
+}
+
+/* Class pembantu posisi & gambar */
+.text-center {
+    text-align: center;
+}
+
+.action-cell {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.img-cover {
+    width: 50px;
+    border-radius: 4px;
+}
+
+/* Ikon aksi */
+.action-btn {
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.text-blue { color: #4a69bd; }
+.text-blue:hover { color: #0f2c59; }
+.text-red { color: #e55039; }
+.text-red:hover { color: #a93226; }
+
+
+/* --- FORM TAMBAH / EDIT BUKU --- */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto 10px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-title {
+    text-align: center;
+    color: #0f2c59;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f2f3f7;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.form-control:focus {
+    background-color: #e8eaf0;
+}
+
+textarea.form-control {
+    border-radius: 15px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-secondary {
+    padding: 12px 45px;
+    background-color: #e94435;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #c3412e;
+}
+
+.form-actions .btn-primary {
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+
+/* --- HALAMAN PEMINJAMAN --- */
+#tabelPeminjaman {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabelPeminjaman thead th {
+    background-color: #f2f3f7;
+    color: #0f2c59;
+    border-bottom: 2px solid #ddd !important;
+}
+
+.select-status {
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+.badge-green { background-color: #2ed573; }
+.badge-red { background-color: #ff4757; }
+
+
+
+/* --- USER KATALOG & ACCORDION --- */
+.catalog-toolbar {
+    position: sticky;
+    top: 65px;
+    z-index: 990;
+    background-color: #f8f9fa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 40px 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    background-color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+
+.search-box input:focus {
+    border-color: #0f2c59;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* Dropdown Kategori */
+.category-dropdown {
+    position: relative;
+}
+
+.category-btn {
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    color: #0f2c59;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    white-space: nowrap;
+}
+
+.category-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background-color: white;
+    min-width: 200px;
+    max-height: 280px;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 100;
+    padding: 8px 0;
+}
+
+.category-menu.show {
+    display: block;
+}
+
+.category-item {
+    display: block;
+    padding: 10px 18px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.category-item:hover {
+    background-color: #f2f3f7;
+    color: #0f2c59;
+}
+
+/* Accordion Section */
+.accordion-item {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    overflow: hidden;
+    scroll-margin-top: 140px;
+}
+
+.accordion-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.accordion-header:hover {
+    background-color: #f9fafe;
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #0f2c59;
+    font-size: 16px;
+}
+
+.accordion-count {
+    font-size: 12px;
+    color: #777;
+    font-weight: normal;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    color: #666;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-body {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.accordion-item.active .accordion-body {
+    display: block;
+}
+
+/* Grid Card Buku */
+.book-grid, .search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background-color: #f0edf5;
+    border-radius: 12px;
+    padding: 0; 
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: stretch;
+    overflow: hidden; 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.book-cover-wrap {
+    width: 110px;
+    min-width: 110px;
+    background-color: #e2dfeb;
+    border-radius: 0; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-cover-placeholder {
+    font-size: 32px;
+    color: #b5b0c4;
+}
+
+/* Pembungkus Teks di Sebelah Kanan Gambar */
+.book-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    min-width: 0;
+    padding: 14px 14px 14px 0;
+}
+
+.book-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 4px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+.book-card-desc {
+    font-size: 12px;
+    color: #666666;
+    margin: 0 0 8px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.stock-status {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: auto;
+}
+
+.stock-available { color: #2ed573; }
+.stock-empty { color: #ff4757; }
+
+.stock-status {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.stock-available { color: #2ed573; }
+.stock-empty { color: #ff4757; }
+
+/* Grid khusus hasil pencarian */
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+
+
+/* --- HALAMAN DETAIL BUKU USER --- */
+.book-detail-container {
+    display: flex;
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    margin-top: 10px;
+}
+
+.book-detail-cover {
+    width: 250px;
+    min-width: 250px;
+    height: 340px;
+    background-color: #f0edf5;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-detail-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-detail-cover .placeholder-icon {
+    font-size: 60px;
+    color: #ccc;
+}
+
+.book-detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-detail-category {
+    color: #4a69bd;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.book-detail-category:hover {
+    color: #0f2c59;
+    text-decoration: underline;
+}
+
+.book-detail-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f2c59;
+    margin: 5px 0 8px 0;
+    line-height: 1.3;
+}
+
+.book-detail-author {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.book-detail-desc {
+    margin-bottom: 20px;
+}
+
+.book-detail-desc h3 {
+    font-size: 15px;
+    color: #0f2c59;
+    margin-bottom: 8px;
+}
+
+.book-detail-desc p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.book-detail-stock {
+    margin-bottom: 25px;
+}
+
+.btn-lg {
+    padding: 12px 28px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-disabled {
+    background-color: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Badge Status Info Detail */
+.status-badge-info {
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: capitalize;
+    cursor: default;
+    border: 1px solid transparent;
+}
+
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: capitalize;
+    cursor: default;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.status-badge.lg {
+    padding: 10px 18px;
+    font-size: 13px;
+    border-radius: 20px;
+}
+
+.status-badge-warning { background-color: #fff8e1; color: #d97706; border: 1px solid #fde68a; }
+.status-badge-info-blue { background-color: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+.status-badge-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; }
+
+
+
+/* --- USER RIWAYAT PEMINJAMAN STYLING --- */
+.riwayat-container .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 25px;
+}
+
+.riwayat-dates {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.riwayat-dates p {
+    margin: 2px 0;
+}
+
+.riwayat-dates span {
+    font-weight: 600;
+    color: #333;
+}
+
+.riwayat-dates .text-denda span {
+    color: #e55039;
+}
+
+.riwayat-badge-wrap {
+    flex-wrap: wrap;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.riwayat-badge {
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+/* Variasi Warna Badge Status */
+.badge-yellow { background-color: #fff8e1; color: #d97706; border-color: #fde68a; }
+.badge-sky    { background-color: #e0f2fe; color: #0284c7; border-color: #bae6fd; }
+.badge-indigo { background-color: #e0e7ff; color: #4338ca; border-color: #c7d2fe; }
+.badge-green  { background-color: #dcfce7; color: #16a34a; border-color: #bbf7d0; }
+.badge-red    { background-color: #fee2e2; color: #dc2626; border-color: #fecaca; }
+
+/* Tombol Batal Pinjam */
+.status-badge,
+.btn-danger {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-danger:hover {
+    background-color: #fca5a5;
+    color: #b91c1c;
+}
+
+
+
+
+
+
+
+
+/* --- MEDIA QUERIES (RESPONSIVE HP) --- */
+@media screen and (max-width: 768px) {
+    .nav-menu, .desktop-only {
+        display: none; /* Sembunyikan menu panjang dan profil */
+    }
+    .hamburger {
+        display: block; /* Tampilkan ikon hamburger di pojok kiri */
+    }
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .main-content {
+        padding: 0 20px 20px 20px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Memaksa kartu menjadi 1 kolom menyusun ke bawah */
+        gap: 30px;
+    }
+    .book-grid, .search-results-grid {
+        grid-template-columns: 1fr; /* 1 Kolom di HP */
+    }
+    .book-cover-wrap {
+        width: 95px;
+        min-width: 95px;
+        height: auto;
+    }
+    .book-card-info {
+        padding: 13px 13px 12px 0;
+    }
+    .book-card-desc {
+        -webkit-line-clamp: 3;
+    }
+    .accordion-item {
+        scroll-margin-top: 130px;
+    }
+
+    .book-detail-container {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+    .book-detail-cover {
+        width: 200px;       
+        min-width: 200px;
+        height: 270px;
+        margin: 0 auto 20px auto;
+        border-radius: 16px;
+    }
+    .book-detail-content {
+        width: 100%;
+    }
+
+    .riwayat-container .book-grid {
+        grid-template-columns: 1fr; 
+    }
+}
