@@ -16,8 +16,8 @@ Sebuah sistem informasi manajemen perpustakaan berbasis web (Full-stack) yang di
 ### Akses User (Mahasiswa)
 * **Katalog Digital & Live Search:** Pencarian judul buku dan filter berdasarkan kategori secara mulus dengan UI *sticky toolbar*.
 * **Detail Buku & Stok Real-time:** Menampilkan sinopsis, penulis, ketersediaan stok, dan tombol pengajuan pinjam.
-* **Pengajuan & Pembatalan Mandiri:** Fitur *request* pinjam buku otomatis mengurangi stok sementara dan fitur batalkan pinjaman saat status masih menunggu/siap diambil otomatis memulihkan stok.
-* **Riwayat Peminjaman:** Laman khusus (*grid UI*) untuk melacak status buku yang sedang dipinjam, tanggal pengambilan, jatuh tempo, dan riwayat denda.
+* **Pengajuan & Pembatalan Mandiri:** Fitur *request* pinjam buku otomatis mengurangi stok dan fitur batalkan pinjaman saat status masih menunggu/siap diambil otomatis memulihkan stok.
+* **Riwayat Peminjaman:** Halaman khusus untuk melacak status buku yang sedang dipinjam, tanggal pengambilan, jatuh tempo, dan riwayat denda.
 
 ## Tech Stack
 * **Frontend:** HTML, CSS, JavaScript.
