@@ -29,7 +29,7 @@ Sebuah sistem informasi manajemen perpustakaan berbasis web (Full-stack) yang di
 
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini menggunakan XAMPP:
 
-1. **Clone Repositori:** Buka terminal dan jalankan perintah `git clone [https://github.com/sitifatiharh/perpus-web.git](https://github.com/sitifatiharh/perpus-web)`.
+1. **Clone Repositori:** Buka terminal dan jalankan perintah git clone [https://github.com/sitifatiharh/perpus-web.git](https://github.com/sitifatiharh/perpus-web).
 2. **Pindahkan Folder:** Pindahkan folder repositori tersebut ke dalam direktori XAMPP lokal, yaitu C:\xampp\htdocs\.
 3. **Konfigurasi Database:** Nyalakan modul Apache dan MySQL melalui XAMPP Control Panel. Akses http://localhost/phpmyadmin di peramban, lalu buat database baru dengan nama db_pinjam_buku.
 4. **Import File SQL:** Buka database yang baru dibuat, pilih tab Import, dan unggah file berekstensi .sql bawaan dari folder proyek tersebut.
