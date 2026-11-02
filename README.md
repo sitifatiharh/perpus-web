@@ -29,13 +29,13 @@ Sebuah sistem informasi manajemen perpustakaan berbasis web (Full-stack) yang di
 
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini menggunakan XAMPP:
 
-**1. Clone Repositori:** Buka terminal dan jalankan perintah git clone [https://github.com/sitifatiharh/perpus-web.git](https://github.com/sitifatiharh/perpus-web).
-**2. Pindahkan Folder:** Pindahkan folder repositori tersebut ke dalam direktori XAMPP lokal, yaitu C:\xampp\htdocs\.
-**3. Konfigurasi Database:** Nyalakan modul Apache dan MySQL melalui XAMPP Control Panel. Akses http://localhost/phpmyadmin di peramban, lalu buat database baru dengan nama db_pinjam_buku.
-**4. Import File SQL:** Buka database yang baru dibuat, pilih tab Import, dan unggah file berekstensi .sql bawaan dari folder proyek tersebut.
-**5. Koneksi Database:** Buka file config/db.php di teks editor dan pastikan konfigurasi koneksinya sesuai dengan kredensial server lokal:
+1. **Clone Repositori:** Buka terminal dan jalankan perintah git clone [https://github.com/sitifatiharh/perpus-web.git](https://github.com/sitifatiharh/perpus-web).
+2. **Pindahkan Folder:** Pindahkan folder repositori tersebut ke dalam direktori XAMPP lokal, yaitu C:\xampp\htdocs\.
+3. **Konfigurasi Database:** Nyalakan modul Apache dan MySQL melalui XAMPP Control Panel. Akses http://localhost/phpmyadmin di peramban, lalu buat database baru dengan nama db_pinjam_buku.
+4. **Import File SQL:** Buka database yang baru dibuat, pilih tab Import, dan unggah file berekstensi .sql bawaan dari folder proyek tersebut.
+5. **Koneksi Database:** Buka file config/db.php di teks editor dan pastikan konfigurasi koneksinya sesuai dengan kredensial server lokal:
 ```$host = "localhost";
 \$user = "root";
 \$pass = "";
 \$db   = "db_pinjam_buku";
-**6. Jalankan Aplikasi:** Buka tab baru pada peramban dan akses aplikasi melalui URL http://localhost/perpus-web (atau sesuaikan tepat dengan nama folder yang ada di dalam htdocs).
+7. **Jalankan Aplikasi:** Buka tab baru pada peramban dan akses aplikasi melalui URL http://localhost/perpus-web (atau sesuaikan tepat dengan nama folder yang ada di dalam htdocs).
